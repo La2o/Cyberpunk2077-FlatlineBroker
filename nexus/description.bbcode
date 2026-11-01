@@ -1,0 +1,54 @@
+[size=5][b]Flatline Broker[/b][/size]
+[i]Black-market braindances for Cyberpunk 2077.[/i]
+
+In the lore, [b]flatlines[/b] are braindances that record someone's death, and they sell under the counter all over Night City. The base game never lets you join that trade. Flatline Broker does.
+
+Install a [b]Zetatech BD Scroller[/b] in your frontal cortex and every human you kill is cut to a flatline shard. What a shard is worth depends on how the kill went down. Only shady BD dealers will buy them, and NCPD takes a dim view of anyone carrying them.
+
+[size=4][b]Features[/b][/size]
+
+[b]BD Scroller cyberware[/b]
+A frontal-cortex implant (humanity cost 4) stocked by ripperdocs in Watson, Westbrook, Heywood, Pacifica, Santo Domingo and Dogtown. While it is installed, your kills are recorded.
+
+[b]Five kinds of flatline, three grades each[/b]
+The kind comes from how the kill happened. When more than one applies, the most valuable kind wins.
+[list]
+[*][b]Street Hit[/b]: any kill that fits no other kind. €$150 / 375 / 900
+[*][b]Ghost[/b]: you were out of combat, or a stealth hit. €$300 / 750 / 1,800
+[*][b]Snuff Reel[/b]: headshot, finisher, dismemberment or explosion. €$350 / 875 / 2,100
+[*][b]Corpo Exit[/b]: the victim works for a megacorp. €$600 / 1,500 / 3,600
+[*][b]Psycho Takedown[/b]: the victim was a cyberpsycho. €$1,500 / 3,750 / 9,000
+[/list]
+The grade comes from who the victim was: grade 1 for regular mooks, grade 2 for officers, elites and rares, grade 3 for bosses and MaxTac. Only humans are recorded; drones, mechs, androids, civilians and crowd NPCs are not.
+
+[b]BD dealers only[/b]
+Flatlines sell only to netrunners and fences in Kabuki, Jig-Jig Street, Japantown, Little China, Heywood and Dogtown. Every other vendor refuses them. They are never swept up by the sell-all-junk or disassemble-junk buttons.
+
+[b]NCPD heat[/b]
+[list]
+[*][b]Patrol scan:[/b] while you carry flatlines and are not wanted, an officer within 10 m may scan you every 15 seconds. The chance grows with the number of shards you carry (5% plus 3% per shard, up to 35%). A bust gives you one star, then patrols leave you alone for 3 minutes.
+[*][b]Manifest:[/b] if you become wanted for anything else while carrying flatlines, NCPD pulls your shard manifest and adds one more star.
+[/list]
+Neither rule fires during quest scenes or where police are locked out.
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*]Cyberpunk 2077, tested on 2.5 with Phantom Liberty
+[*][url=https://www.nexusmods.com/cyberpunk2077/mods/1511]redscript[/url]
+[*][url=https://www.nexusmods.com/cyberpunk2077/mods/2380]RED4ext[/url]
+[*][url=https://www.nexusmods.com/cyberpunk2077/mods/4197]TweakXL[/url]
+[*][url=https://www.nexusmods.com/cyberpunk2077/mods/7780]Codeware[/url]
+[/list]
+
+[size=4][b]Installation[/b][/size]
+Extract the archive into your Cyberpunk 2077 folder (the one containing [i]bin[/i] and [i]r6[/i]), or install with Vortex / MO2.
+To uninstall, unequip the BD Scroller and sell or drop your flatlines, then delete [i]r6/scripts/FlatlineBroker[/i] and [i]r6/tweaks/FlatlineBroker[/i].
+
+Want the implant right away? With Cyber Engine Tweaks:
+[code]Game.AddToInventory("Items.FlatlineBroker_BDScroller", 1)[/code]
+
+[size=4][b]Compatibility[/b][/size]
+Adds records and wraps a few methods with @wrapMethod; replaces nothing. Wrapped: NPCPuppet.OnDeath, PreventionSystem.OnHeatChanged, Vendor.PlayerCanSell, VendorDataManager.GetItemsPlayerCanSellFast, FullscreenVendorGameController.GetSellableJunk, UIInventoryItem.IsJunk, PlayerPuppet.OnGameAttached.
+
+[size=4][b]Source[/b][/size]
+[url=https://github.com/La2o/Cyberpunk2077-FlatlineBroker]github.com/La2o/Cyberpunk2077-FlatlineBroker[/url] (MIT)
