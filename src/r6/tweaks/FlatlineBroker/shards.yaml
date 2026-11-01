@@ -1,0 +1,53 @@
+# Flatline Broker: flatline braindance shards
+#
+# One record per (kind, grade). The recorder (Recorder.reds) picks the kind from
+# how the kill happened and the grade from the victim's NPC rarity:
+#
+#   kind     how the kill happened                          base price
+#   Street   anything that fits no other kind                    150
+#   Ghost    the player was out of combat, or a stealth hit      300
+#   Snuff    headshot, finisher, dismemberment or explosion      350
+#   Corpo    the victim belongs to a megacorp                    600
+#   Psycho   the victim was a cyberpsycho                       1500
+#
+#   grade    victim rarity                       price multiplier
+#   1        Trash, Weak, Normal                          x1
+#   2        Rare, Officer, Elite                         x2.5
+#   3        Boss, MaxTac                                 x6
+#
+# Every shard carries the FlatlineShard tag. Script uses it to count what the
+# player is carrying (NCPD heat), to keep shards out of the sell-all-junk and
+# disassemble-junk buttons, and to let only BD dealers (Config.IsBDDealer) buy
+# them. The base record is ordinary junk so the shard shows up in the backpack
+# and has a working drop/loot setup. Prices live in prices.yaml.
+
+Items.FlatlineBroker_Shard_$(kind)_$(grade):
+  $instances:
+    - { kind: Street, grade: 1, quality: Common,    icon: bd_icon_01 }
+    - { kind: Street, grade: 2, quality: Uncommon,  icon: bd_icon_01 }
+    - { kind: Street, grade: 3, quality: Rare,      icon: bd_icon_01 }
+    - { kind: Ghost,  grade: 1, quality: Uncommon,  icon: bd_icon_02 }
+    - { kind: Ghost,  grade: 2, quality: Rare,      icon: bd_icon_02 }
+    - { kind: Ghost,  grade: 3, quality: Epic,      icon: bd_icon_02 }
+    - { kind: Snuff,  grade: 1, quality: Uncommon,  icon: bd_icon_03 }
+    - { kind: Snuff,  grade: 2, quality: Rare,      icon: bd_icon_03 }
+    - { kind: Snuff,  grade: 3, quality: Epic,      icon: bd_icon_03 }
+    - { kind: Corpo,  grade: 1, quality: Rare,      icon: bd_icon_04 }
+    - { kind: Corpo,  grade: 2, quality: Epic,      icon: bd_icon_04 }
+    - { kind: Corpo,  grade: 3, quality: Legendary, icon: bd_icon_04 }
+    - { kind: Psycho, grade: 1, quality: Epic,      icon: bd_icon_05 }
+    - { kind: Psycho, grade: 2, quality: Legendary, icon: bd_icon_05 }
+    - { kind: Psycho, grade: 3, quality: Legendary, icon: bd_icon_05 }
+  $base: Items.GenericJunkItem1
+  displayName: LocKey#flatline_shard_$(kind)_$(grade)_name
+  localizedName: LocKey#flatline_shard_$(kind)_$(grade)_name
+  localizedDescription: LocKey#flatline_shard_$(kind)_desc
+  quality: Quality.$(quality)
+  icon: UIIcon.$(icon)
+  iconPath: $(icon)
+  buyPrice:
+    - FlatlineBroker.Price_$(kind)_$(grade)
+  sellPrice:
+    - FlatlineBroker.Price_$(kind)_$(grade)
+  tags:
+    - !append-once FlatlineShard

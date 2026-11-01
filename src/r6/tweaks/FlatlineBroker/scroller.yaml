@@ -1,0 +1,73 @@
+# Flatline Broker: the BD Scroller cyberware
+#
+# A frontal-cortex implant that rides the user's own sensory feed and scrolls a
+# braindance recording of every kill they make. While it is installed, every
+# human the player kills is recorded as a "flatline" shard (see shards.yaml and
+# r6/scripts/FlatlineBroker/Recorder.reds).
+#
+# The record clones a vanilla frontal-cortex implant so it inherits a working
+# equip area, placement slot, ripperdoc category and upgrade plumbing, then
+# strips the base implant's gameplay effects. The redscript side recognises the
+# implant by its TweakDBID (FlatlineBroker.Config.IsScroller), so renaming the
+# record here means editing that list too.
+#
+# Display strings are LocKey tokens resolved by Codeware's localization
+# provider (r6/scripts/FlatlineBroker/Localization.reds).
+#
+# Console grant for testing (CET):
+#   Game.AddToInventory("Items.FlatlineBroker_BDScroller", 1)
+
+Items.FlatlineBroker_BDScroller:
+  $base: Items.AdvancedSubdermalCoProcessorRare
+  displayName: LocKey#flatline_scroller_name
+  localizedName: LocKey#flatline_scroller_name
+  localizedDescription: LocKey#flatline_scroller_desc
+  cyberwareType: FlatlineBrokerBDScroller
+  quality: Quality.Rare
+  nextUpgradeItem: None
+  variants: [ Variants.Humanity4Cost ]
+  statModifiers:
+    - Items.ItemArmorToArmor
+    - Items.AdvancedFrontalCortexModule_inline0
+  OnEquip: []
+  buyPrice:
+    - Price.BaseCyberwarePrice
+    - Price.ItemQualityMultiplier
+    - Price.CyberwareMultiplier
+    - Price.BuyPrice_StreetCred_Discount
+  sellPrice:
+    - Price.BaseCyberwarePrice
+    - Price.ItemQualityMultiplier
+    - Price.CyberwareMultiplier
+    - Price.CyberwareSellMultiplier
+  tags:
+    - !append-once FlatlineBrokerScroller
+
+# Ripperdocs in the districts where a flatline habit makes sense keep one in
+# stock at all times.
+Vendors.$(vendor):
+  $instances:
+    - { vendor: wat_kab_ripperdoc_01 }
+    - { vendor: wat_kab_ripperdoc_02 }
+    - { vendor: wat_kab_ripperdoc_03 }
+    - { vendor: wat_lch_ripperdoc_01 }
+    - { vendor: wat_nid_ripperdoc_01 }
+    - { vendor: wbr_jpn_ripperdoc_01 }
+    - { vendor: wbr_jpn_ripperdoc_02 }
+    - { vendor: hey_spr_ripperdoc_01 }
+    - { vendor: pac_wwd_ripperdoc_01 }
+    - { vendor: std_arr_ripperdoc_01 }
+    - { vendor: std_rcr_ripperdoc_01 }
+    - { vendor: bls_ina_se1_ripperdoc_01 }
+    - { vendor: bls_ina_se1_ripperdoc_02 }
+    - { vendor: cz_stadium_ripperdoc_01 }
+    - { vendor: cz_monument_ripperdoc_anderson }
+    - { vendor: cz_monument_ripperdoc_farida }
+  itemStock:
+    - !append
+      $type: gamedataVendorItem_Record
+      item: Items.FlatlineBroker_BDScroller
+      generationPrereqs:
+        - Prereqs.AlwaysTruePrereq
+      quantity:
+        - Vendors.Always_Present

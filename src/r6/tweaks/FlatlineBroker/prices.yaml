@@ -1,0 +1,92 @@
+# Flatline Broker: shard prices, one constant per (kind, grade). See shards.yaml.
+
+FlatlineBroker.Price_Street_1:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 150.0
+
+FlatlineBroker.Price_Street_2:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 375.0
+
+FlatlineBroker.Price_Street_3:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 900.0
+
+FlatlineBroker.Price_Ghost_1:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 300.0
+
+FlatlineBroker.Price_Ghost_2:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 750.0
+
+FlatlineBroker.Price_Ghost_3:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 1800.0
+
+FlatlineBroker.Price_Snuff_1:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 350.0
+
+FlatlineBroker.Price_Snuff_2:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 875.0
+
+FlatlineBroker.Price_Snuff_3:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 2100.0
+
+FlatlineBroker.Price_Corpo_1:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 600.0
+
+FlatlineBroker.Price_Corpo_2:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 1500.0
+
+FlatlineBroker.Price_Corpo_3:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 3600.0
+
+FlatlineBroker.Price_Psycho_1:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 1500.0
+
+FlatlineBroker.Price_Psycho_2:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 3750.0
+
+FlatlineBroker.Price_Psycho_3:
+  $type: gamedataConstantStatModifier_Record
+  modifierType: Additive
+  statType: BaseStats.Price
+  value: 9000.0
+
