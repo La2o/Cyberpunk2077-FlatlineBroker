@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- Optional Wannabe Edgerunner integration: with WE installed, each recorded flatline costs extra humanity (1 per grade) on top of WE's own kill cost. Without WE nothing changes.
+- Fixed wording: the BD Scroller costs 4 cyberware capacity, not "humanity".
+
 ## 1.0.0
 
 First release.

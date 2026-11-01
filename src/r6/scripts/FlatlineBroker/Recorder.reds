@@ -48,6 +48,7 @@ public abstract class Recorder {
     let grade: Int32 = Recorder.Grade(npc);
     let game: GameInstance = player.GetGame();
     GameInstance.GetTransactionSystem(game).GiveItemByTDBID(player, Config.ShardID(kind, grade), 1);
+    Integration.OnFlatlineRecorded(player, grade);
     FlatlineBroker_Notify(game, Loc.Format(game, "flatline_msg_recorded", Loc.Get(game, "flatline_kind_" + Config.KindKey(kind)), IntToString(grade)));
   }
 

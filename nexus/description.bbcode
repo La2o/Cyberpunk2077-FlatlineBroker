@@ -8,7 +8,7 @@ Install a [b]Zetatech BD Scroller[/b] in your frontal cortex and every human you
 [size=4][b]Features[/b][/size]
 
 [b]BD Scroller cyberware[/b]
-A frontal-cortex implant (humanity cost 4) stocked by ripperdocs in Watson, Westbrook, Heywood, Pacifica, Santo Domingo and Dogtown. While it is installed, your kills are recorded.
+A frontal-cortex implant (cyberware capacity cost 4) stocked by ripperdocs in Watson, Westbrook, Heywood, Pacifica, Santo Domingo and Dogtown. While it is installed, your kills are recorded.
 
 [b]Five kinds of flatline, three grades each[/b]
 The kind comes from how the kill happened. When more than one applies, the most valuable kind wins.
@@ -49,6 +49,12 @@ Want the implant right away? With Cyber Engine Tweaks:
 
 [size=4][b]Compatibility[/b][/size]
 Adds records and wraps a few methods with @wrapMethod; replaces nothing. Wrapped: NPCPuppet.OnDeath, PreventionSystem.OnHeatChanged, Vendor.PlayerCanSell, VendorDataManager.GetItemsPlayerCanSellFast, FullscreenVendorGameController.GetSellableJunk, UIInventoryItem.IsJunk, PlayerPuppet.OnGameAttached.
+
+[size=4][b]Humanity mods[/b][/size]
+[list]
+[*][b]Wannabe Edgerunner[/b] (optional): each recorded flatline costs extra humanity, 1 point per grade, on top of WE's own kill cost. Only active when WE is installed.
+[*][b]Dark Future[/b]: works out of the box. DF scales humanity loss by allocated cyberware capacity, and the BD Scroller's 4 points count like any other implant.
+[/list]
 
 [size=4][b]Source[/b][/size]
 [url=https://github.com/La2o/Cyberpunk2077-FlatlineBroker]github.com/La2o/Cyberpunk2077-FlatlineBroker[/url] (MIT)

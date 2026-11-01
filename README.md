@@ -21,7 +21,7 @@ anyone carrying them.
 
 ## Features
 
-**BD Scroller cyberware.** A frontal-cortex implant (humanity cost 4) stocked by
+**BD Scroller cyberware.** A frontal-cortex implant (cyberware capacity cost 4) stocked by
 ripperdocs in Watson, Westbrook, Heywood, Pacifica, Santo Domingo and Dogtown.
 While it is installed, your kills are recorded.
 
@@ -95,6 +95,15 @@ replaces nothing, so it coexists with most mods:
   `FullscreenVendorGameController.GetSellableJunk`, `UIInventoryItem.IsJunk`:
   the dealer and junk rules
 - `PlayerPuppet.OnGameAttached`: starts the patrol timer
+
+### Humanity mods
+
+- **Wannabe Edgerunner** (optional): each recorded flatline costs extra
+  humanity, 1 point per grade, on top of WE's own kill cost. The integration
+  compiles in only when WE is installed.
+- **Dark Future**: works without any integration. Dark Future scales humanity
+  loss by allocated cyberware capacity, and the BD Scroller's 4 points count
+  like any other implant.
 
 ## Building from source
 
