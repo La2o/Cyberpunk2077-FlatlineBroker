@@ -207,11 +207,11 @@ step(2, function()
     return v:PlayerCanSell(item, false, false), how
   end
   local ok, err = pcall(function()
-    for _, vid in ipairs({ "Vendors.wat_kab_netrunner_01", "Vendors.wat_kab_junkshop_01", "Vendors.cz_con_junkshop_01" }) do
+    for _, vid in ipairs({ "Vendors.wat_kab_junkshop_01", "Vendors.cz_con_junkshop_01", "Vendors.hey_spr_junkshop_01", "Vendors.bls_ina_se1_junkshop_01", "Vendors.cz_stadium_junk_01_michal_k", "Vendors.wbr_jpn_techstore_01" }) do
       local r, how = canSell(vid, shard)
       check("BD dealer " .. vid .. " buys flatlines", r == true, how)
     end
-    for _, vid in ipairs({ "Vendors.wat_kab_gunsmith_01", "Vendors.wat_kab_medicstore_01", "Vendors.cz_con_ripdoc_01" }) do
+    for _, vid in ipairs({ "Vendors.wat_kab_netrunner_01", "Vendors.wat_kab_gunsmith_01", "Vendors.wat_kab_medicstore_01", "Vendors.cz_con_ripdoc_01", "Vendors.IceMachine" }) do
       local r, how = canSell(vid, shard)
       check("non-dealer " .. vid .. " refuses flatlines", r == false, how)
     end

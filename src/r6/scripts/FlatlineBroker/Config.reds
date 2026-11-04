@@ -64,24 +64,28 @@ public abstract class Config {
     return "Street";
   }
 
-  // Vendors who deal in black-market braindances. Only they buy flatlines:
-  // netrunner dens and fences in Kabuki, Jig-Jig Street, Japantown, Little
-  // China, Heywood and Dogtown.
+  // Who deals in black-market braindances. Only they buy flatlines:
+  // the fences: every vendor the map shows as a Junk Vendor (vendor type Junk
+  // or TechJunk), across Watson, Westbrook, Heywood, the Badlands and Dogtown.
+  // Matching on type rather than a list of IDs keeps them easy to find, and
+  // picks up junk shops added by the game or other mods.
+  //
+  // 1.0 used a hand-picked ID list instead. Half of it turned out to be
+  // skill-trainer or food vendors, some never placed in the world, and players
+  // could not tell which junk shops were dealers.
   public static func IsBDDealer(vendorID: TweakDBID) -> Bool {
-    return vendorID == t"Vendors.wat_kab_netrunner_01"
-      || vendorID == t"Vendors.wat_kab_junkshop_01"
-      || vendorID == t"Vendors.wat_lch_netrunner_01"
-      || vendorID == t"Vendors.wbr_jpn_netrunner_01"
-      || vendorID == t"Vendors.wbr_jpn_netrunner_02"
-      || vendorID == t"Vendors.wbr_jpn_junkshop_01"
-      || vendorID == t"Vendors.wbr_jpn_junkshop_02"
-      || vendorID == t"Vendors.wbr_jpn_junkshop_03"
-      || vendorID == t"Vendors.wbr_jpn_jig_bar_01"
-      || vendorID == t"Vendors.hey_rey_netrunner_01"
-      || vendorID == t"Vendors.hey_rey_junkshop_01"
-      || vendorID == t"Vendors.cz_con_netrunner_01"
-      || vendorID == t"Vendors.cz_con_junkshop_01"
-      || vendorID == t"Vendors.cz_stadium_netrunner_01";
+    // Junk-typed records that are not shops a player walks up to.
+    if vendorID == t"Vendors.IceMachine"
+      || vendorID == t"Vendors.q303_casino_cashier_EP1"
+      || vendorID == t"Vendors.mq303_shank" {
+      return false;
+    }
+    let record: ref<Vendor_Record> = TweakDBInterface.GetVendorRecord(vendorID);
+    if !IsDefined(record) || !IsDefined(record.VendorType()) {
+      return false;
+    }
+    let vendorType: gamedataVendorType = record.VendorType().Type();
+    return Equals(vendorType, gamedataVendorType.Junk) || Equals(vendorType, gamedataVendorType.TechJunk);
   }
 
   public static func IsCorpo(affiliation: gamedataAffiliation) -> Bool {

@@ -10,8 +10,8 @@ that trade. Flatline Broker does.
 
 Install a **Zetatech BD Scroller** in your frontal cortex and every human you
 kill is cut to a flatline shard. What a shard is worth depends on how the kill
-went down. Only shady BD dealers will buy them, and NCPD takes a dim view of
-anyone carrying them.
+went down. Only fences at junk shops will buy them, and NCPD takes a dim view
+of anyone carrying them.
 
 ![A kill recorded as a Psycho Takedown flatline](docs/images/flatline-recorded.jpg)
 
@@ -42,10 +42,12 @@ officers, elites and rares, grade 3 for bosses and MaxTac.
 Only humans are recorded. Drones, mechs, androids, civilians and crowd NPCs are
 not.
 
-**BD dealers only.** Flatlines sell only to netrunners and fences in Kabuki,
-Jig-Jig Street, Japantown, Little China, Heywood and Dogtown. Every other vendor
-refuses them. They are never swept up by the *sell all junk* or *disassemble
-junk* buttons.
+**Sold at junk shops.** Flatlines sell to any **Junk Vendor**: the junk-shop
+icon on your map, found across Watson, Westbrook, Heywood, the Badlands and
+Dogtown (for example Frank's Emporium in Kabuki). Every other vendor refuses
+them. Junk vendors only carry so much cash (the one I tested in the Badlands
+had €$20,000), so a big haul may need more than one shop. Flatlines are never swept up by the *sell all junk*
+or *disassemble junk* buttons; sell them one stack at a time.
 
 **NCPD heat.**
 - *Patrol scan:* while you carry flatlines and are not wanted, an officer

@@ -17,7 +17,7 @@
 #
 # Every shard carries the FlatlineShard tag. Script uses it to count what the
 # player is carrying (NCPD heat), to keep shards out of the sell-all-junk and
-# disassemble-junk buttons, and to let only BD dealers (Config.IsBDDealer) buy
+# disassemble-junk buttons, and to let only junk vendors (Config.IsBDDealer) buy
 # them. The base record is ordinary junk so the shard shows up in the backpack
 # and has a working drop/loot setup. Prices live in prices.yaml.
 
